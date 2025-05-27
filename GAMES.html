@@ -20,29 +20,40 @@
       border-radius: 6px;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 40px;
-    }
-
-    td {
-      padding: 10px;
-      border-bottom: 1px solid #ccc;
-      text-align: left;
-    }
-
-    .match-row {
+    .game-box {
       background-color: #fff;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
-    .match-row:nth-child(even) {
-      background-color: #f0f0f0;
+    .team {
+      flex: 1 1 45%;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .score {
+      flex: 0 0 50px;
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+
+    .ot {
+      font-size: 0.9em;
+      color: #888;
+      margin-left: 10px;
     }
 
     .back-link {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 30px;
       text-decoration: none;
       color: #004080;
       font-weight: bold;
@@ -51,49 +62,68 @@
     .back-link:hover {
       text-decoration: underline;
     }
-
-    .score {
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .ot {
-      color: #888;
-      font-size: 0.9em;
-    }
   </style>
 </head>
 <body>
 
   <h2>WEEK 1 - C.A.H.L</h2>
-  <table>
-    <tr class="match-row"><td>SHTINKLEMACHERS</td><td class="score">2</td><td></td></tr>
-    <tr class="match-row"><td>ISRAEL SMASHERS</td><td class="score">1</td><td></td></tr>
-    <tr class="match-row"><td>ELICOPTERS</td><td class="score">0</td><td></td></tr>
-    <tr class="match-row"><td>770 TUNNEL DIGGERS</td><td class="score">3</td><td></td></tr>
-    <tr class="match-row"><td>SHTINKLEMACHERS</td><td class="score">3</td><td class="ot">OT</td></tr>
-    <tr class="match-row"><td>ELICOPTERS</td><td class="score">2</td><td></td></tr>
-    <tr class="match-row"><td>ISRAEL SMASHERS</td><td class="score">0</td><td></td></tr>
-    <tr class="match-row"><td>770 TUNNEL DIGGERS</td><td class="score">3</td><td></td></tr>
-    <tr class="match-row"><td>SHTINKLEMACHERS</td><td class="score">0</td><td></td></tr>
-    <tr class="match-row"><td>770 TUNNEL DIGGERS</td><td class="score">4</td><td></td></tr>
-  </table>
+
+  <div class="game-box">
+    <div class="team">SHTINKLEMACHERS</div><div class="score">2</div>
+    <div class="team">ISRAEL SMASHERS</div><div class="score">1</div>
+  </div>
+
+  <div class="game-box">
+    <div class="team">ELICOPTERS</div><div class="score">0</div>
+    <div class="team">770 TUNNEL DIGGERS</div><div class="score">3</div>
+  </div>
+
+  <div class="game-box">
+    <div class="team">SHTINKLEMACHERS</div><div class="score">3 <span class="ot">OT</span></div>
+    <div class="team">ELICOPTERS</div><div class="score">2</div>
+  </div>
+
+  <div class="game-box">
+    <div class="team">ISRAEL SMASHERS</div><div class="score">0</div>
+    <div class="team">770 TUNNEL DIGGERS</div><div class="score">3</div>
+  </div>
+
+  <div class="game-box">
+    <div class="team">SHTINKLEMACHERS</div><div class="score">0</div>
+    <div class="team">770 TUNNEL DIGGERS</div><div class="score">4</div>
+  </div>
 
   <h2>WEEK 2 - C.A.H.L</h2>
-  <table>
-    <tr class="match-row"><td>ELICOPTERS</td><td class="score">2</td><td class="ot">OT</td></tr>
-    <tr class="match-row"><td>ISRAEL SMASHERS</td><td class="score">1</td><td></td></tr>
-    <tr class="match-row"><td>ISRAEL SMASHERS</td><td class="score">1</td><td></td></tr>
-    <tr class="match-row"><td>770 TUNNEL DIGGERS</td><td class="score">5</td><td></td></tr>
-    <tr class="match-row"><td>770 TUNNEL DIGGERS</td><td class="score">3</td><td></td></tr>
-    <tr class="match-row"><td>SHTINKLEMACHERS</td><td class="score">0</td><td></td></tr>
-    <tr class="match-row"><td>SHTINKLEMACHERS</td><td class="score">1</td><td></td></tr>
-    <tr class="match-row"><td>ELICOPTERS</td><td class="score">2</td><td class="ot">OT</td></tr>
-    <tr class="match-row"><td>ISRAEL SMASHERS</td><td class="score">3</td><td></td></tr>
-    <tr class="match-row"><td>ELICOPTERS</td><td class="score">4</td><td class="ot">OT</td></tr>
-    <tr class="match-row"><td>770 TUNNEL DIGGERS</td><td class="score">7</td><td></td></tr>
-    <tr class="match-row"><td>ISRAEL SMASHER</td><td class="score">1</td><td></td></tr>
-  </table>
+
+  <div class="game-box">
+    <div class="team">ELICOPTERS</div><div class="score">2 <span class="ot">OT</span></div>
+    <div class="team">ISRAEL SMASHERS</div><div class="score">1</div>
+  </div>
+
+  <div class="game-box">
+    <div class="team">ISRAEL SMASHERS</div><div class="score">1</div>
+    <div class="team">770 TUNNEL DIGGERS</div><div class="score">5</div>
+  </div>
+
+  <div class="game-box">
+    <div class="team">770 TUNNEL DIGGERS</div><div class="score">3</div>
+    <div class="team">SHTINKLEMACHERS</div><div class="score">0</div>
+  </div>
+
+  <div class="game-box">
+    <div class="team">SHTINKLEMACHERS</div><div class="score">1</div>
+    <div class="team">ELICOPTERS</div><div class="score">2 <span class="ot">OT</span></div>
+  </div>
+
+  <div class="game-box">
+    <div class="team">ISRAEL SMASHERS</div><div class="score">3</div>
+    <div class="team">ELICOPTERS</div><div class="score">4 <span class="ot">OT</span></div>
+  </div>
+
+  <div class="game-box">
+    <div class="team">770 TUNNEL DIGGERS</div><div class="score">7</div>
+    <div class="team">ISRAEL SMASHER</div><div class="score">1</div>
+  </div>
 
   <a class="back-link" href="index.html">← Back to Home</a>
 
