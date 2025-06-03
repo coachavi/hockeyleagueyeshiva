@@ -159,5 +159,23 @@
   
   <a class="back-link" href="index.html">← Back to Home</a>
 
+  <script>
+  document.querySelectorAll('.game-box').forEach(box => {
+    const teams = box.querySelectorAll('.team');
+    const scores = box.querySelectorAll('.score');
+
+    if (teams.length === 2 && scores.length === 2) {
+      const score1 = parseInt(scores[0].textContent) || 0;
+      const score2 = parseInt(scores[1].textContent) || 0;
+
+      if (score1 > score2) {
+        teams[0].style.fontWeight = 'bolder';
+      } else if (score2 > score1) {
+        teams[1].style.fontWeight = 'bolder';
+      }
+    }
+  });
+</script>
+
 </body>
 </html>
