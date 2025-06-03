@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CAHL HOCKEY TEAMS YESHIVA DIVISION</title><img src="cahllogo.png" style="width: 100px; height: auto;">
-<style>
+    <title>CAHL HOCKEY TEAMS YESHIVA DIVISION</title>
+    <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-image: url('cahllogo.png');
+            background-size: cover; /* Or try 'contain', '100% 100%', etc. */
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed; /* Optional: keeps the image fixed while scrolling */
             margin: 0;
             padding: 20px;
             text-align: center;
+            color: #000;
         }
 
         h1 {
@@ -25,7 +30,7 @@
         }
 
         .team {
-            background: white;
+            background: rgba(255, 255, 255, 0.85); /* Slight transparency */
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -57,27 +62,26 @@
     </style>
 </head>
 <body>
-   
     <h1>Our Hockey League Teams</h1>
 
     <div class="team-gallery">
         <div class="team">
-            <img src="elicopter.png" alt="Team Logo"></td>            
+            <img src="elicopter.png" alt="Team Logo">
             <h2>ELICOPTERS</h2>
         </div>
 
         <div class="team">
-            <img src="smashers.png" alt="Team Logo"></td>          
+            <img src="smashers.png" alt="Team Logo">
             <h2>ISRAEL SMASHERS</h2>
         </div>
 
         <div class="team">
-            <img src="770.png" alt="770 TUNNEL DIGGERS Logo"></td>            
+            <img src="770.png" alt="770 TUNNEL DIGGERS Logo">
             <h2>770 TUNNEL DIGGERS</h2>
         </div>
 
         <div class="team">
-            <img src="shtinkle2.png" alt="SHTINKLEMACHERS Logo"></td>            
+            <img src="shtinkle2.png" alt="SHTINKLEMACHERS Logo">
             <h2>SHTINKLEMACHERS</h2>
         </div>
     </div>
