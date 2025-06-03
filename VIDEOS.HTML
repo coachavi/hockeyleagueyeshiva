@@ -12,6 +12,17 @@
       padding: 40px;
     }
 
+    h1 {
+      margin-bottom: 40px;
+    }
+
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
     iframe {
       width: 80%;
       max-width: 800px;
@@ -24,8 +35,9 @@
     a.back-link {
       color: #ccc;
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 50px;
       text-decoration: none;
+      font-size: 1.1em;
     }
 
     a.back-link:hover {
@@ -37,13 +49,26 @@
 
   <h1>CAHL Game Highlights</h1>
 
-  <iframe 
-    src="https://www.youtube.com/embed/RzBONm_g_ZQ" 
-    title="YouTube video player" 
-    allowfullscreen>
-  </iframe>
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/RzBONm_g_ZQ" 
+      title="Video 1" 
+      allowfullscreen>
+    </iframe>
 
-  <br>
+    <iframe 
+      src="https://www.youtube.com/embed/Lox7p0VUjsI" 
+      title="Video 2" 
+      allowfullscreen>
+    </iframe>
+
+    <iframe 
+      src="https://www.youtube.com/embed/Hf1jhho9r3Y" 
+      title="Video 3" 
+      allowfullscreen>
+    </iframe>
+  </div>
+
   <a class="back-link" href="index.html">← Back to Home</a>
 
 </body>
