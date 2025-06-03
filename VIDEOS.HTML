@@ -1,21 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Embedded YouTube Video</title>
+  <meta charset="UTF-8">
+  <title>CAHL League Videos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+    }
+
+    iframe {
+      width: 80%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    a.back-link {
+      color: #ccc;
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+    }
+
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <h1>Watch the CAHL Video</h1>
 
-  <iframe width="560" height="315"
-    src="https://www.youtube.com/embed/RzBONm_g_ZQ"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  <h1>CAHL Game Highlights</h1>
+
+  <iframe 
+    src="https://www.youtube.com/embed/RzBONm_g_ZQ" 
+    title="YouTube video player" 
     allowfullscreen>
   </iframe>
 
- <a class="back-link" href="index.html">← Back to Home</a>
+  <br>
+  <a class="back-link" href="index.html">← Back to Home</a>
+
 </body>
 </html>
