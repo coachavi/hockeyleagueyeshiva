@@ -33,21 +33,21 @@
             margin-top: 50px;
         }
 
-        .logo {
-            width: 500px;
-            height: auto;
+        .logo-container {
+            perspective: 1000px;
             margin-top: 30px;
-            animation: swing 2s ease-in-out infinite;
-            transform-origin: center;
-            display: inline-block;
         }
 
-        @keyframes swing {
-            0%   { transform: rotateZ(0deg); }
-            25%  { transform: rotateZ(-10deg); }
-            50%  { transform: rotateZ(0deg); }
-            75%  { transform: rotateZ(10deg); }
-            100% { transform: rotateZ(0deg); }
+        .logo {
+            width: 1000px;
+            height: auto;
+            animation: spinX 3s linear infinite;
+            transform-style: preserve-3d;
+        }
+
+        @keyframes spinX {
+            from { transform: rotateX(0deg); }
+            to   { transform: rotateX(360deg); }
         }
     </style>
 </head>
@@ -61,7 +61,10 @@
     </nav>
 
     <h1>Welcome to the CAHL Coach Avi Hockey League</h1>
-    <img src="cahllogo.png" alt="CAHL Logo" class="logo">
+
+    <div class="logo-container">
+        <img src="cahllogo.png" alt="CAHL Logo" class="logo">
+    </div>
 
 </body>
 </html>
