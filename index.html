@@ -51,6 +51,15 @@
             from { transform: rotateY(0deg); }
             to   { transform: rotateY(360deg); }
         }
+
+        /* New style for the announcement text */
+        #announcement-text {
+            font-family: Impact, Charcoal, sans-serif;
+            font-size: 28px;
+            margin-top: 4em;  /* roughly 3-4 lines below the logo */
+            color: #003366;
+            white-space: pre-line; /* to respect line breaks */
+        }
     </style>
 </head>
 <body>
@@ -67,6 +76,11 @@
 
     <div class="logo-container">
         <img src="cahllogo.png" alt="CAHL Logo" class="logo">
+    </div>
+
+    <div id="announcement-text">
+        GET READY FOR A SUPER FUN PACKED HOCKEY!!!<br>
+        WEEK 4 THIS SUNDAY NIGHT
     </div>
 
     <script>
