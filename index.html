@@ -1,122 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>CAHL Coach Avi Hockey League</title>
-    <style>
-        body {
-            background-color: #f0f8ff;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <title>CAHL Coach Avi Hockey League</title>
+  <style>
+    body {
+      background-color: #f0f8ff;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-        nav {
-            background-color: #003366;
-            padding: 15px;
-        }
+    nav {
+      background-color: #003366;
+      padding: 15px;
+    }
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        nav a.active {
-            color: #ffd700;
-            text-decoration: underline;
-        }
+    nav a.active {
+      color: #ffd700;
+      text-decoration: underline;
+    }
 
-        h1 {
-            color: #003366;
-            margin-top: 50px;
-            margin-bottom: 40px;
-        }
+    h1 {
+      color: #003366;
+      margin-top: 50px;
+      margin-bottom: 40px;
+    }
 
-        .logo-container {
-            perspective: 400px;
-            margin-top: 40px;
-        }
+    .logo-container {
+      perspective: 800px;
+      margin-top: 40px;
+    }
 
-        .logo {
-            width: 200px;
-            height: auto;
-            animation: spinX 12s linear infinite;
-            transform-style: preserve-3d;
-        }
+    .logo {
+      width: 200px;
+      height: auto;
+      animation: spinX 12s linear infinite;
+      transform-style: preserve-3d;
+    }
 
-        @keyframes spinX {
-            from { transform: rotateY(0deg); }
-            to   { transform: rotateY(360deg); }
-        }
+    @keyframes spinX {
+      from { transform: rotateY(0deg); }
+      to   { transform: rotateY(360deg); }
+    }
 
-        #announcement-text {
-            font-family: Impact, Charcoal, sans-serif;
-            font-size: 28px;
-            margin-top: 30px;
-            color: #003366;
-            white-space: pre-line;
-        }
+    #announcement-text {
+      font-family: Impact, Charcoal, sans-serif;
+      font-size: 28px;
+      margin-top: 30px;
+      color: #003366;
+      white-space: pre-line;
+    }
 
-        #slideshow img {
-            margin-top: 10px;
-            width: 180px;
-            height: auto;
-            transition: opacity 1s ease-in-out;
-        }
-    </style>
+    /* 3D Image Cube Styles */
+    .cube-container {
+      perspective: 1000px;
+      width: 400px;
+      height: 300px;
+      margin: 30px auto;
+    }
+
+    .cube {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s ease-in-out;
+    }
+
+    .cube-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+
+    .cube-face img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border: 2px solid #003366;
+      border-radius: 10px;
+      background-color: white;
+    }
+
+    .cube-face.back {
+      transform: rotateY(180deg);
+    }
+  </style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html" class="nav-link">Welcome</a>
-        <a href="home.html" class="nav-link">Home</a>
-        <a href="TEAMS.html" class="nav-link">Teams</a>
-        <a href="GAMES.html" class="nav-link">Games</a>
-        <a href="VIDEOS.HTML" class="nav-link">Videos</a>
-    </nav>
+  <nav>
+    <a href="index.html" class="nav-link">Welcome</a>
+    <a href="home.html" class="nav-link">Home</a>
+    <a href="TEAMS.html" class="nav-link">Teams</a>
+    <a href="GAMES.html" class="nav-link">Games</a>
+    <a href="VIDEOS.HTML" class="nav-link">Videos</a>
+  </nav>
 
-    <h1>Welcome to the CAHL Coach Avi Hockey League</h1>
+  <h1>Welcome to the CAHL Coach Avi Hockey League</h1>
 
-    <div class="logo-container">
-        <img src="cahllogo.png" alt="CAHL Logo" class="logo">
+  <div class="logo-container">
+    <img src="cahllogo.png" alt="CAHL Logo" class="logo">
+  </div>
+
+  <div id="announcement-text">
+    BROUGHT TO YOU BY
+  </div>
+
+  <div class="cube-container">
+    <div class="cube" id="cube">
+      <div class="cube-face front">
+        <img src="coachavi1.png" alt="Coach Avi 1">
+      </div>
+      <div class="cube-face back">
+        <img src="coachavi2.png" alt="Coach Avi 2">
+      </div>
     </div>
+  </div>
 
-    <div id="announcement-text">
-        BROUGHT TO YOU BY <br>
-        <div id="slideshow">
-            <img src="coachavi.png" alt="Coach Avi">
-        </div>
-    </div>
+  <script>
+    const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+    const navLinks = document.querySelectorAll(".nav-link");
+    navLinks.forEach(link => {
+      const href = link.getAttribute("href").toLowerCase();
+      if (href === currentPage || (currentPage === "" && href === "index.html")) {
+        link.classList.add("active");
+      }
+    });
 
-    <script>
-        const currentPage = window.location.pathname.split("/").pop().toLowerCase();
-        const navLinks = document.querySelectorAll(".nav-link");
+    // Cube image rotation logic
+    const cube = document.getElementById("cube");
+    const frontFace = cube.querySelector(".front img");
+    const backFace = cube.querySelector(".back img");
 
-        navLinks.forEach(link => {
-            const href = link.getAttribute("href").toLowerCase();
-            if (href === currentPage || (currentPage === "" && href === "index.html")) {
-                link.classList.add("active");
-            }
-        });
+    const images = ["coachavi1.png", "coachavi2.png", "coachavi3.png", "coachavi4.png"];
+    let index = 0;
 
-        // Slideshow logic
-        const slideshowImages = [
-            "coachavi2.png",
-            "coachavi3.png",
-            "coachavi4.png",
-            "coachavi5.png"
-        ];
-        let currentImage = 0;
-        const imgElement = document.querySelector("#slideshow img");
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      const nextIndex = (index + 1) % images.length;
 
-        setInterval(() => {
-            currentImage = (currentImage + 1) % slideshowImages.length;
-            imgElement.src = slideshowImages[currentImage];
-        }, 10000); // 10 seconds
-    </script>
+      // Swap images
+      frontFace.src = images[index];
+      backFace.src = images[nextIndex];
+
+      // Trigger rotation
+      cube.style.transform = `rotateY(${index * 180}deg)`;
+    }, 10000);
+  </script>
 
 </body>
 </html>
