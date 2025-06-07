@@ -42,6 +42,7 @@
       justify-content: center;
       align-items: center;
       gap: 20px;
+      position: relative;
     }
 
     .logo {
@@ -49,6 +50,7 @@
       height: auto;
       animation: spinX 12s linear infinite;
       transform-style: preserve-3d;
+      z-index: 1;
     }
 
     @keyframes spinX {
@@ -69,11 +71,30 @@
       opacity: 0;
       transition: opacity 0.5s ease-in-out;
       user-select: none;
-      min-width: 150px;
-      text-align: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap;
     }
 
-    /* Rotating image section */
+    #he-shoots {
+      left: 10%;
+      color: red;
+    }
+
+    #he-scores {
+      right: 10%;
+      color: green;
+    }
+
+    #announcement-text {
+      font-family: Impact, Charcoal, sans-serif;
+      font-size: 28px;
+      margin-top: 30px;
+      color: #003366;
+      white-space: pre-line;
+    }
+
     .cube-container {
       width: 400px;
       height: 300px;
@@ -149,34 +170,35 @@
         imgElement.src = images[index];
         imgElement.style.opacity = 1; // fade in
       }, 500);
-    }, 10000); // 5 seconds per image
+    }, 10000); // 10 seconds per image
 
-    // Show "HE SHOOTS" and "HE SCORES!!!" with timing (no sound)
+    // Show "HE SHOOTS" and "HE SCORES!!!"
     const heShoots = document.getElementById("he-shoots");
     const heScores = document.getElementById("he-scores");
 
     function showTexts() {
-      // Hide both first
+      // Reset
       heShoots.style.opacity = "0";
       heScores.style.opacity = "0";
 
-      // Show HE SHOOTS first
+      // Show HE SHOOTS immediately
       setTimeout(() => {
         heShoots.style.opacity = "1";
       }, 0);
 
-      // Show HE SCORES 2 seconds later
+      // Show HE SCORES after 2s
       setTimeout(() => {
         heScores.style.opacity = "1";
       }, 2000);
 
-      // Hide both after 12 seconds 
+      // Hide both after 12s total
       setTimeout(() => {
         heShoots.style.opacity = "0";
         heScores.style.opacity = "0";
       }, 12000);
     }
 
+    // Start and loop
     showTexts();
     setInterval(showTexts, 12000);
   </script>
