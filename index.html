@@ -65,7 +65,7 @@
     .announcement-text {
       font-family: Impact, Charcoal, sans-serif;
       font-size: 32px;
-      color: #003366;
+      color: #003366; /* Blue */
       font-weight: 900;
       font-style: italic;
       opacity: 0;
@@ -79,12 +79,10 @@
 
     #he-shoots {
       left: 10%;
-      color: red;
     }
 
     #he-scores {
       right: 10%;
-      color: green;
     }
 
     #announcement-text {
@@ -136,7 +134,6 @@
 
   <div id="announcement-text">BROUGHT TO YOU BY</div>
 
-  <!-- Rotating image section -->
   <div class="cube-container">
     <img id="rotating-image" src="coachavi.png" alt="Coach Avi" />
   </div>
@@ -165,42 +162,42 @@
 
     setInterval(() => {
       index = (index + 1) % images.length;
-      imgElement.style.opacity = 0; // fade out
+      imgElement.style.opacity = 0;
       setTimeout(() => {
         imgElement.src = images[index];
-        imgElement.style.opacity = 1; // fade in
+        imgElement.style.opacity = 1;
       }, 500);
     }, 10000); // 10 seconds per image
 
-    // Show "HE SHOOTS" and "HE SCORES!!!"
+    // HE SHOOTS / HE SCORES animation
     const heShoots = document.getElementById("he-shoots");
     const heScores = document.getElementById("he-scores");
 
-    function showTexts() {
-      // Reset
+    function animateText() {
+      // Hide both
       heShoots.style.opacity = "0";
       heScores.style.opacity = "0";
 
-      // Show HE SHOOTS immediately
+      // Step 1: 2 seconds later, show HE SHOOTS
       setTimeout(() => {
         heShoots.style.opacity = "1";
-      }, 0);
-
-      // Show HE SCORES after 2s
-      setTimeout(() => {
-        heScores.style.opacity = "1";
       }, 2000);
 
-      // Hide both after 12s total
+      // Step 2: 4 seconds later (2s after HE SHOOTS), show HE SCORES
+      setTimeout(() => {
+        heScores.style.opacity = "1";
+      }, 4000);
+
+      // Step 3: After 8 seconds from start, hide both
       setTimeout(() => {
         heShoots.style.opacity = "0";
         heScores.style.opacity = "0";
-      }, 12000);
+      }, 10000);
     }
 
-    // Start and loop
-    showTexts();
-    setInterval(showTexts, 12000);
+    // Start loop
+    animateText();
+    setInterval(animateText, 12000); // 10s display + 2s pause = 12s cycle
   </script>
 </body>
 </html>
