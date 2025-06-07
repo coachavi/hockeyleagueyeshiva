@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Coach Avi Slideshow</title>
+  <meta charset="UTF-8">
+  <title>CAHL Coach Avi Hockey League</title>
   <style>
     body {
       background-color: #f0f8ff;
@@ -57,25 +57,43 @@
       font-size: 28px;
       margin-top: 30px;
       color: #003366;
+      white-space: pre-line;
     }
 
-    /* Slideshow Styles */
-    .slideshow-box {
-      width: 300px;
-      height: 300px;
-      margin: 20px auto;
+    /* 3D Image Cube Styles */
+    .cube-container {
       perspective: 1000px;
+      width: 400px;
+      height: 300px;
+      margin: 30px auto;
     }
 
-    .slideshow-box img {
+    .cube {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s ease-in-out;
+    }
+
+    .cube-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+
+    .cube-face img {
       width: 100%;
       height: 100%;
       object-fit: contain;
       border: 2px solid #003366;
       border-radius: 10px;
-      backface-visibility: hidden;
-      transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-      transform-style: preserve-3d;
+      background-color: white;
+    }
+
+    .cube-face.back {
+      transform: rotateY(180deg);
     }
   </style>
 </head>
@@ -99,9 +117,25 @@
     BROUGHT TO YOU BY
   </div>
 
-  <div class="slideshow-box">
-    <img id="slideshow-image" src="coachavi.png" alt="Coach Avi Image">
-  </div>
+  <div class="cube-container">
+    <div class="cube" id="cube">
+      <div class="cube-face front">
+        <img src="coachavi.png" alt="Coach Avi">
+      </div>
+      <div class="cube-face back">
+        <img src="coachavi2.png" alt="Coach Avi 2">
+      </div>
+      <div class="cube-face front">
+        <img src="coachavi3.png" alt="Coach Avi 3">
+      </div>
+      <div class="cube-face back">
+        <img src="coachavi4.png" alt="Coach Avi 4">   
+      </div>
+      <div class="cube-face front">
+        <img src="coachavi5.png" alt="Coach Avi 5">
+      </div>
+      <div class="cube-face back">
+        <img src="coachavi.png" alt="Coach Avi">  </div>
 
   <script>
     const currentPage = window.location.pathname.split("/").pop().toLowerCase();
@@ -113,26 +147,24 @@
       }
     });
 
-    // Slideshow logic
-    const images = [
-      "coachavi.png",
-      "coachavi2.png",
-      "coachavi3.png",
-      "coachavi4.png",
-      "coachavi5.png"
-    ];
+    // Cube image rotation logic
+    const cube = document.getElementById("cube");
+    const frontFace = cube.querySelector(".front img");
+    const backFace = cube.querySelector(".back img");
+
+    const images = ["coachavi.png", "coachavi2.png", "coachavi3.png", "coachavi4.png", "coachavi5.png"];
     let index = 0;
-    const slideshow = document.getElementById("slideshow-image");
 
     setInterval(() => {
       index = (index + 1) % images.length;
-      slideshow.style.opacity = 0;
+      const nextIndex = (index + 1) % images.length;
 
-      setTimeout(() => {
-        slideshow.src = images[index];
-        slideshow.style.transform = "rotateY(180deg)";
-        slideshow.style.opacity = 1;
-      }, 500); // Halfway fade
+      // Swap images
+      frontFace.src = images[index];
+      backFace.src = images[nextIndex];
+
+      // Trigger rotation
+      cube.style.transform = `rotateY(${index * 180}deg)`;
     }, 5000);
   </script>
 
