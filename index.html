@@ -170,17 +170,14 @@
         heScores.style.opacity = "1";
       }, 2000);
 
-      // Hide both after 12 seconds (2s delay + 10s visible)
+      // Hide both after 12 seconds 
       setTimeout(() => {
         heShoots.style.opacity = "0";
         heScores.style.opacity = "0";
       }, 12000);
     }
 
-    // Initial run
     showTexts();
-
-    // Repeat every 6 seconds
     setInterval(showTexts, 6000);
   </script>
 </body>
