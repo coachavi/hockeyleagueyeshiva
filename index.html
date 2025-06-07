@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>CAHL Coach Avi Hockey League</title>
   <style>
     body {
@@ -38,6 +38,10 @@
     .logo-container {
       perspective: 800px;
       margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
     }
 
     .logo {
@@ -48,18 +52,28 @@
     }
 
     @keyframes spinX {
-      from { transform: rotateY(0deg); }
-      to   { transform: rotateY(360deg); }
+      from {
+        transform: rotateY(0deg);
+      }
+      to {
+        transform: rotateY(360deg);
+      }
     }
 
-    #announcement-text {
+    .announcement-text {
       font-family: Impact, Charcoal, sans-serif;
-      font-size: 28px;
-      margin-top: 30px;
+      font-size: 32px;
       color: #003366;
-      white-space: pre-line;
+      font-weight: 900;
+      font-style: italic;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      user-select: none;
+      min-width: 150px;
+      text-align: center;
     }
 
+    /* Rotating image section */
     .cube-container {
       width: 400px;
       height: 300px;
@@ -83,7 +97,6 @@
   </style>
 </head>
 <body>
-
   <nav>
     <a href="index.html" class="nav-link">Welcome</a>
     <a href="home.html" class="nav-link">Home</a>
@@ -95,23 +108,23 @@
   <h1>Welcome to the CAHL Coach Avi Hockey League</h1>
 
   <div class="logo-container">
-    <img src="cahllogo.png" alt="CAHL Logo" class="logo">
+    <div id="he-shoots" class="announcement-text">HE SHOOTS</div>
+    <img src="cahllogo.png" alt="CAHL Logo" class="logo" />
+    <div id="he-scores" class="announcement-text">HE SCORES!!!</div>
   </div>
 
-  <div id="announcement-text">
-    BROUGHT TO YOU BY
-  </div>
+  <div id="announcement-text">BROUGHT TO YOU BY</div>
 
   <!-- Rotating image section -->
   <div class="cube-container">
-    <img id="rotating-image" src="coachavi.png" alt="Coach Avi">
+    <img id="rotating-image" src="coachavi.png" alt="Coach Avi" />
   </div>
 
   <script>
     // Highlight current nav
     const currentPage = window.location.pathname.split("/").pop().toLowerCase();
     const navLinks = document.querySelectorAll(".nav-link");
-    navLinks.forEach(link => {
+    navLinks.forEach((link) => {
       const href = link.getAttribute("href").toLowerCase();
       if (href === currentPage || (currentPage === "" && href === "index.html")) {
         link.classList.add("active");
@@ -124,7 +137,7 @@
       "coachavi2.png",
       "coachavi3.png",
       "coachavi4.png",
-      "coachavi5.png"
+      "coachavi5.png",
     ];
     let index = 0;
     const imgElement = document.getElementById("rotating-image");
@@ -137,7 +150,38 @@
         imgElement.style.opacity = 1; // fade in
       }, 500);
     }, 10000); // 10 seconds per image
-  </script>
 
+    // Show "HE SHOOTS" and "HE SCORES!!!" with timing (no sound)
+    const heShoots = document.getElementById("he-shoots");
+    const heScores = document.getElementById("he-scores");
+
+    function showTexts() {
+      // Hide both first
+      heShoots.style.opacity = "0";
+      heScores.style.opacity = "0";
+
+      // Show HE SHOOTS first
+      setTimeout(() => {
+        heShoots.style.opacity = "1";
+      }, 0);
+
+      // Show HE SCORES 2 seconds later
+      setTimeout(() => {
+        heScores.style.opacity = "1";
+      }, 2000);
+
+      // Hide both after 12 seconds (2s delay + 10s visible)
+      setTimeout(() => {
+        heShoots.style.opacity = "0";
+        heScores.style.opacity = "0";
+      }, 12000);
+    }
+
+    // Initial run
+    showTexts();
+
+    // Repeat every 12 seconds
+    setInterval(showTexts, 12000);
+  </script>
 </body>
 </html>
