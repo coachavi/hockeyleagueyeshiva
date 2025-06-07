@@ -43,7 +43,8 @@
       align-items: center;
       gap: 40px;
       position: relative;
-      padding: 0 60px; /* Added padding to prevent text from clipping */
+      padding: 0 8vw; /* Responsive padding left and right */
+      overflow: visible;
     }
 
     .logo {
@@ -66,7 +67,7 @@
     .announcement-text {
       font-family: Impact, Charcoal, sans-serif;
       font-size: 32px;
-      color: #003366;
+      color: #003366; /* Blue color */
       font-weight: 900;
       font-style: italic;
       opacity: 0;
@@ -76,14 +77,16 @@
       top: 50%;
       transform: translateY(-50%);
       white-space: nowrap;
+      max-width: 35vw; /* limit width so no clipping */
+      overflow: visible;
     }
 
     #he-shoots {
-      left: 0;
+      left: 8%;
     }
 
     #he-scores {
-      right: 0;
+      right: 8%;
     }
 
     #announcement-text {
