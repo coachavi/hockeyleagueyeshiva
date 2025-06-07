@@ -43,8 +43,7 @@
       align-items: center;
       gap: 40px;
       position: relative;
-      padding: 0 8vw; /* Responsive horizontal padding */
-      overflow: visible;
+      padding: 0 60px; /* Added padding to prevent text from clipping */
     }
 
     .logo {
@@ -67,7 +66,7 @@
     .announcement-text {
       font-family: Impact, Charcoal, sans-serif;
       font-size: 32px;
-      color: #003366; /* Blue */
+      color: #003366;
       font-weight: 900;
       font-style: italic;
       opacity: 0;
@@ -77,8 +76,6 @@
       top: 50%;
       transform: translateY(-50%);
       white-space: nowrap;
-      max-width: 35vw;
-      overflow: visible;
     }
 
     #he-shoots {
@@ -171,24 +168,28 @@
         imgElement.src = images[index];
         imgElement.style.opacity = 1;
       }, 500);
-    }, 10000); // 10 seconds per image
+    }, 10000);
 
-    // HE SHOOTS / HE SCORES animation
+    // Text animation logic
     const heShoots = document.getElementById("he-shoots");
     const heScores = document.getElementById("he-scores");
 
     function animateText() {
+      // Reset both to hidden
       heShoots.style.opacity = "0";
       heScores.style.opacity = "0";
 
+      // After 2s: show "HE SHOOTS"
       setTimeout(() => {
         heShoots.style.opacity = "1";
       }, 2000);
 
+      // After 4s: show "HE SCORES!!!"
       setTimeout(() => {
         heScores.style.opacity = "1";
       }, 4000);
 
+      // After 10s: hide both
       setTimeout(() => {
         heShoots.style.opacity = "0";
         heScores.style.opacity = "0";
@@ -196,7 +197,7 @@
     }
 
     animateText();
-    setInterval(animateText, 12000);
+    setInterval(animateText, 12000); // 12s cycle
   </script>
 </body>
 </html>
