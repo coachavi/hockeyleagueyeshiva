@@ -41,8 +41,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 20px;
+      gap: 40px;
       position: relative;
+      padding: 0 8vw; /* Responsive horizontal padding */
+      overflow: visible;
     }
 
     .logo {
@@ -75,14 +77,16 @@
       top: 50%;
       transform: translateY(-50%);
       white-space: nowrap;
+      max-width: 35vw;
+      overflow: visible;
     }
 
     #he-shoots {
-      left: 10%;
+      left: 0;
     }
 
     #he-scores {
-      right: 10%;
+      right: 0;
     }
 
     #announcement-text {
@@ -174,30 +178,25 @@
     const heScores = document.getElementById("he-scores");
 
     function animateText() {
-      // Hide both
       heShoots.style.opacity = "0";
       heScores.style.opacity = "0";
 
-      // Step 1: 2 seconds later, show HE SHOOTS
       setTimeout(() => {
         heShoots.style.opacity = "1";
       }, 2000);
 
-      // Step 2: 4 seconds later (2s after HE SHOOTS), show HE SCORES
       setTimeout(() => {
         heScores.style.opacity = "1";
       }, 4000);
 
-      // Step 3: After 8 seconds from start, hide both
       setTimeout(() => {
         heShoots.style.opacity = "0";
         heScores.style.opacity = "0";
       }, 10000);
     }
 
-    // Start loop
     animateText();
-    setInterval(animateText, 12000); // 10s display + 2s pause = 12s cycle
+    setInterval(animateText, 12000);
   </script>
 </body>
 </html>
