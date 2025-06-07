@@ -149,7 +149,7 @@
         imgElement.src = images[index];
         imgElement.style.opacity = 1; // fade in
       }, 500);
-    }, 10000); // 10 seconds per image
+    }, 10000); // 5 seconds per image
 
     // Show "HE SHOOTS" and "HE SCORES!!!" with timing (no sound)
     const heShoots = document.getElementById("he-shoots");
@@ -180,8 +180,8 @@
     // Initial run
     showTexts();
 
-    // Repeat every 12 seconds
-    setInterval(showTexts, 12000);
+    // Repeat every 6 seconds
+    setInterval(showTexts, 6000);
   </script>
 </body>
 </html>
