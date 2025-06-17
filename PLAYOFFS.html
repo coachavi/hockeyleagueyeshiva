@@ -100,18 +100,26 @@
       left: -100px;
     }
 
+    .center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+      position: relative;
+    }
+
     .final-line {
       width: 100px;
       height: 4px;
       background-color: black;
     }
 
-    .center {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      position: relative;
+    .final-left {
+      margin-right: 40px;
+    }
+
+    .final-right {
+      margin-left: 40px;
     }
 
     .stanley-cup {
@@ -138,7 +146,7 @@
     <div class="round">
       <div class="matchup">
         <div class="team-box">
-          <img src="helicopter.png" alt="Helicopter Logo">
+          <img src="elicopter.png" alt="Elicopter Logo">
           ELICOPTERS
         </div>
         <div class="connector connector-right"></div>
@@ -157,9 +165,9 @@
 
     <!-- Center Stanley Cup -->
     <div class="center">
-      <div class="final-line"></div>
+      <div class="final-line final-left"></div>
       <img src="InShot_20250616_232552058.jpg" alt="Stanley Cup" class="stanley-cup">
-      <div class="final-line"></div>
+      <div class="final-line final-right"></div>
     </div>
 
     <!-- Right Side -->
@@ -187,5 +195,5 @@
 
   <a class="back-link" href="home.html">&larr; Back to Home</a>
 
-</body>
+  </body>
 </html>
