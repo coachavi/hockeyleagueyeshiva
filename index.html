@@ -35,6 +35,16 @@
       margin-bottom: 40px;
     }
 
+    .blinker {
+      animation: blinkLoop 4s step-start infinite;
+    }
+
+    @keyframes blinkLoop {
+      0% { opacity: 1; }
+      75% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
     .logo-container {
       perspective: 800px;
       margin-top: 40px;
@@ -43,7 +53,7 @@
       align-items: center;
       gap: 40px;
       position: relative;
-      padding: 0 8vw; /* Responsive padding left and right */
+      padding: 0 8vw;
       overflow: visible;
     }
 
@@ -67,7 +77,7 @@
     .announcement-text {
       font-family: Impact, Charcoal, sans-serif;
       font-size: 32px;
-      color: #003366; /* Blue color */
+      color: #003366;
       font-weight: 900;
       font-style: italic;
       opacity: 0;
@@ -77,7 +87,7 @@
       top: 50%;
       transform: translateY(-50%);
       white-space: nowrap;
-      max-width: 35vw; /* limit width so no clipping */
+      max-width: 35vw;
       overflow: visible;
     }
 
@@ -130,8 +140,7 @@
   </nav>
 
   <h1>Welcome to the CAHL Coach Avi Hockey League</h1>
-  <h1>PLAYOFFS AND FINALS SUNDAY JUNE 22ND!!!</h1>
-  
+  <h1 class="blinker">PLAYOFFS AND FINALS SUNDAY JUNE 22ND!!!</h1>
 
   <div class="logo-container">
     <div id="he-shoots" class="announcement-text">HE SHOOTS</div>
@@ -181,21 +190,17 @@
     const heScores = document.getElementById("he-scores");
 
     function animateText() {
-      // Reset both to hidden
       heShoots.style.opacity = "0";
       heScores.style.opacity = "0";
 
-      // After 2s: show "HE SHOOTS"
       setTimeout(() => {
         heShoots.style.opacity = "1";
       }, 2000);
 
-      // After 4s: show "HE SCORES!!!"
       setTimeout(() => {
         heScores.style.opacity = "1";
       }, 4000);
 
-      // After 10s: hide both
       setTimeout(() => {
         heShoots.style.opacity = "0";
         heScores.style.opacity = "0";
@@ -203,7 +208,7 @@
     }
 
     animateText();
-    setInterval(animateText, 12000); // 12s cycle
+    setInterval(animateText, 12000);
   </script>
 </body>
 </html>
