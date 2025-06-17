@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Playoff Bracket</title>
   <style>
     body {
@@ -73,6 +73,7 @@
       z-index: 1;
     }
 
+    /* Connectors from teams */
     .connector-right {
       right: -100px;
       width: 100px;
@@ -83,6 +84,7 @@
       width: 100px;
     }
 
+    /* Vertical merge lines */
     .merge-line {
       position: absolute;
       width: 4px;
@@ -92,6 +94,7 @@
       z-index: 0;
     }
 
+    /* Vertical merge lines on each side */
     .merge-line-left {
       right: -100px;
     }
@@ -108,18 +111,26 @@
       position: relative;
     }
 
-    .final-line {
+    /* FINAL LINES: horizontal lines closest to Stanley Cup */
+
+    /* LEFT SIDE: final line to the RIGHT of vertical lines */
+    .final-line-left {
       width: 100px;
       height: 4px;
       background-color: black;
+      position: relative;
+      z-index: 10;
+      margin-left: 100px; /* pushed to right OUTSIDE vertical line */
     }
 
-    .final-left {
-      margin-right: 40px;
-    }
-
-    .final-right {
-      margin-left: 40px;
+    /* RIGHT SIDE: final line to the LEFT of vertical lines */
+    .final-line-right {
+      width: 100px;
+      height: 4px;
+      background-color: black;
+      position: relative;
+      z-index: 10;
+      margin-right: 100px; /* pushed to left OUTSIDE vertical line */
     }
 
     .stanley-cup {
@@ -146,7 +157,7 @@
     <div class="round">
       <div class="matchup">
         <div class="team-box">
-          <img src="elicopter.png" alt="Elicopter Logo">
+          <img src="helicopter.png" alt="Helicopter Logo" />
           ELICOPTERS
         </div>
         <div class="connector connector-right"></div>
@@ -154,7 +165,7 @@
 
       <div class="matchup">
         <div class="team-box">
-          <img src="shtinkle.png" alt="Shtinkle Logo">
+          <img src="shtinkle.png" alt="Shtinkle Logo" />
           SHTINKLEMACHERS
         </div>
         <div class="connector connector-right"></div>
@@ -165,9 +176,9 @@
 
     <!-- Center Stanley Cup -->
     <div class="center">
-      <div class="final-line final-left"></div>
-      <img src="InShot_20250616_232552058.jpg" alt="Stanley Cup" class="stanley-cup">
-      <div class="final-line final-right"></div>
+      <div class="final-line-left"></div>
+      <img src="InShot_20250616_232552058.jpg" alt="Stanley Cup" class="stanley-cup" />
+      <div class="final-line-right"></div>
     </div>
 
     <!-- Right Side -->
@@ -175,7 +186,7 @@
       <div class="matchup">
         <div class="connector connector-left"></div>
         <div class="team-box">
-          <img src="770.png" alt="770 Logo">
+          <img src="770.png" alt="770 Logo" />
           770 TUNNEL DIGGERS
         </div>
       </div>
@@ -183,7 +194,7 @@
       <div class="matchup">
         <div class="connector connector-left"></div>
         <div class="team-box">
-          <img src="smashers.png" alt="Smashers Logo">
+          <img src="smashers.png" alt="Smashers Logo" />
           ISRAEL SMASHERS
         </div>
       </div>
@@ -193,7 +204,7 @@
 
   </div>
 
-  <a class="back-link" href="home.html">&larr; Back to Home</a>
+  <a class="back-link" href="home.html">← Back to Home</a>
 
-  </body>
+</body>
 </html>
