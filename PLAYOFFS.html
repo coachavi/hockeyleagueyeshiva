@@ -8,18 +8,11 @@
       margin: 0;
       padding: 40px;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #c0c0c0 0%, #d9d9d9 25%, #a6a6a6 50%, #d9d9d9 75%, #c0c0c0 100%);
-      background-size: 400% 400%;
-      animation: shine 10s ease-in-out infinite;
+      background-color: black;
+      color: white;
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-
-    @keyframes shine {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
     }
 
     .bracket-container {
@@ -46,15 +39,16 @@
     .team-box {
       display: flex;
       align-items: center;
-      background-color: white;
-      border: 2px solid #ccc;
+      background-color: #222; /* dark but visible on black */
+      border: 2px solid #888;
       border-radius: 10px;
       padding: 12px 20px;
       font-weight: bold;
       font-size: 20px;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px #444;
       min-width: 240px;
       z-index: 2;
+      color: white;
     }
 
     .team-box img {
@@ -62,12 +56,13 @@
       height: 45px;
       margin-right: 12px;
       object-fit: contain;
+      filter: drop-shadow(0 0 2px black);
     }
 
     .connector {
       position: absolute;
       height: 4px;
-      background-color: black;
+      background-color: white;
       top: 50%;
       transform: translateY(-50%);
       z-index: 1;
@@ -89,7 +84,7 @@
       position: absolute;
       width: 4px;
       height: 180px;
-      background-color: black;
+      background-color: white;
       top: calc(50% - 90px);
       z-index: 0;
     }
@@ -117,7 +112,7 @@
     .final-line-left {
       width: 100px;
       height: 4px;
-      background-color: black;
+      background-color: white;
       position: relative;
       z-index: 10;
       margin-left: 100px; /* pushed to right OUTSIDE vertical line */
@@ -127,7 +122,7 @@
     .final-line-right {
       width: 100px;
       height: 4px;
-      background-color: black;
+      background-color: white;
       position: relative;
       z-index: 10;
       margin-right: 100px; /* pushed to left OUTSIDE vertical line */
@@ -136,6 +131,7 @@
     .stanley-cup {
       width: 200px;
       height: auto;
+      filter: drop-shadow(0 0 6px white);
     }
 
     .back-link {
@@ -143,9 +139,13 @@
       text-align: center;
       margin-top: 40px;
       font-weight: bold;
-      color: black;
+      color: white;
       text-decoration: none;
       font-size: 18px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
