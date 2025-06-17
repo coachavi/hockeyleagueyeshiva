@@ -50,16 +50,17 @@
       background-color: white;
       border: 2px solid #ccc;
       border-radius: 10px;
-      padding: 10px 15px;
+      padding: 12px 20px;
       font-weight: bold;
+      font-size: 20px;
       box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-      min-width: 200px;
+      min-width: 220px;
     }
 
     .team-box img {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
+      width: 45px;
+      height: 45px;
+      margin-right: 12px;
       object-fit: contain;
     }
 
@@ -73,24 +74,27 @@
       transform: translateY(-50%);
     }
 
+    .connector-left {
+      left: -40px;
+      right: auto;
+    }
+
     .center {
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 30px;
+      gap: 40px;
     }
 
     .stanley-cup {
-      width: 120px;
+      width: 180px;
       height: auto;
     }
 
-    .vertical-line {
-      width: 2px;
-      height: 160px;
+    .final-connector {
+      width: 60px;
+      height: 2px;
       background-color: black;
-      margin: -40px 0;
     }
 
     .back-link {
@@ -106,18 +110,22 @@
     @media (max-width: 768px) {
       .bracket-container {
         flex-direction: column;
+        gap: 40px;
       }
 
       .round {
         flex-direction: row;
       }
 
-      .connector {
+      .connector,
+      .connector-left,
+      .final-connector {
         display: none;
       }
 
-      .vertical-line {
-        display: none;
+      .team-box {
+        font-size: 16px;
+        min-width: unset;
       }
     }
   </style>
@@ -145,17 +153,17 @@
       </div>
     </div>
 
-    <!-- Center Cup -->
+    <!-- Center: Final Round with Cup and Lines -->
     <div class="center">
-      <div class="vertical-line"></div>
+      <div class="final-connector"></div>
       <img src="InShot_20250616_232552058.jpg" alt="Stanley Cup" class="stanley-cup">
-      <div class="vertical-line"></div>
+      <div class="final-connector"></div>
     </div>
 
     <!-- Right Side -->
     <div class="round">
       <div class="matchup">
-        <div class="connector" style="left: -40px; right: auto;"></div>
+        <div class="connector connector-left"></div>
         <div class="team-box">
           <img src="770.png" alt="770 Logo">
           770 TUNNEL DIGGERS
@@ -163,7 +171,7 @@
       </div>
 
       <div class="matchup">
-        <div class="connector" style="left: -40px; right: auto;"></div>
+        <div class="connector connector-left"></div>
         <div class="team-box">
           <img src="smashers.png" alt="Smashers Logo">
           ISRAEL SMASHERS
@@ -173,7 +181,7 @@
 
   </div>
 
-  <!-- Back to Home link -->
+  <!-- Back to Home -->
   <a class="back-link" href="home.html">← Back to Home</a>
 
 </body>
