@@ -26,7 +26,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 60px;
     }
 
     .round {
@@ -40,8 +39,8 @@
     .matchup {
       display: flex;
       align-items: center;
-      gap: 10px;
       position: relative;
+      height: 100px;
     }
 
     .team-box {
@@ -55,6 +54,7 @@
       font-size: 20px;
       box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
       min-width: 240px;
+      z-index: 2;
     }
 
     .team-box img {
@@ -70,37 +70,37 @@
       background-color: black;
       top: 50%;
       transform: translateY(-50%);
+      z-index: 1;
     }
 
     .connector-right {
-      right: -80px;
-      width: 80px;
+      right: -100px;
+      width: 100px;
     }
 
     .connector-left {
-      left: -80px;
-      width: 80px;
+      left: -100px;
+      width: 100px;
     }
 
-    .merge-line-left,
-    .merge-line-right {
+    .merge-line {
       position: absolute;
       width: 4px;
       height: 180px;
       background-color: black;
-      top: 0;
+      top: calc(50% - 90px);
+      z-index: 0;
     }
 
     .merge-line-left {
-      right: -80px;
+      right: -100px;
     }
 
     .merge-line-right {
-      left: -80px;
+      left: -100px;
     }
 
-    .final-line-left,
-    .final-line-right {
+    .final-line {
       width: 100px;
       height: 4px;
       background-color: black;
@@ -128,39 +128,15 @@
       text-decoration: none;
       font-size: 18px;
     }
-
-    @media (max-width: 768px) {
-      .bracket-container {
-        flex-direction: column;
-        gap: 40px;
-      }
-
-      .round {
-        flex-direction: row;
-      }
-
-      .connector,
-      .merge-line-left,
-      .merge-line-right,
-      .final-line-left,
-      .final-line-right {
-        display: none;
-      }
-
-      .team-box {
-        font-size: 16px;
-        min-width: unset;
-      }
-    }
   </style>
 </head>
 <body>
 
   <div class="bracket-container">
-    
+
     <!-- Left Side -->
     <div class="round">
-      <div class="matchup" style="margin-bottom: 20px;">
+      <div class="matchup">
         <div class="team-box">
           <img src="helicopter.png" alt="Helicopter Logo">
           ELICOPTERS
@@ -168,7 +144,7 @@
         <div class="connector connector-right"></div>
       </div>
 
-      <div class="matchup" style="margin-top: 20px;">
+      <div class="matchup">
         <div class="team-box">
           <img src="shtinkle.png" alt="Shtinkle Logo">
           SHTINKLEMACHERS
@@ -176,20 +152,19 @@
         <div class="connector connector-right"></div>
       </div>
 
-      <!-- Vertical merge line -->
-      <div class="merge-line-left" style="top: 65px;"></div>
+      <div class="merge-line merge-line-left"></div>
     </div>
 
-    <!-- Center Final Round -->
+    <!-- Center Stanley Cup -->
     <div class="center">
-      <div class="final-line-left"></div>
+      <div class="final-line"></div>
       <img src="InShot_20250616_232552058.jpg" alt="Stanley Cup" class="stanley-cup">
-      <div class="final-line-right"></div>
+      <div class="final-line"></div>
     </div>
 
     <!-- Right Side -->
     <div class="round">
-      <div class="matchup" style="margin-bottom: 20px;">
+      <div class="matchup">
         <div class="connector connector-left"></div>
         <div class="team-box">
           <img src="770.png" alt="770 Logo">
@@ -197,7 +172,7 @@
         </div>
       </div>
 
-      <div class="matchup" style="margin-top: 20px;">
+      <div class="matchup">
         <div class="connector connector-left"></div>
         <div class="team-box">
           <img src="smashers.png" alt="Smashers Logo">
@@ -205,14 +180,12 @@
         </div>
       </div>
 
-      <!-- Vertical merge line -->
-      <div class="merge-line-right" style="top: 65px;"></div>
+      <div class="merge-line merge-line-right"></div>
     </div>
 
   </div>
 
-  <!-- Back to Home -->
-  <a class="back-link" href="home.html">← Back to Home</a>
+  <a class="back-link" href="home.html">&larr; Back to Home</a>
 
 </body>
 </html>
