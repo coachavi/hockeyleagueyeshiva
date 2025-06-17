@@ -54,7 +54,7 @@
       font-weight: bold;
       font-size: 20px;
       box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-      min-width: 220px;
+      min-width: 240px;
     }
 
     .team-box img {
@@ -66,17 +66,44 @@
 
     .connector {
       position: absolute;
-      width: 40px;
-      height: 2px;
+      height: 4px;
       background-color: black;
-      right: -40px;
       top: 50%;
       transform: translateY(-50%);
     }
 
+    .connector-right {
+      right: -80px;
+      width: 80px;
+    }
+
     .connector-left {
-      left: -40px;
-      right: auto;
+      left: -80px;
+      width: 80px;
+    }
+
+    .merge-line-left,
+    .merge-line-right {
+      position: absolute;
+      width: 4px;
+      height: 180px;
+      background-color: black;
+      top: 0;
+    }
+
+    .merge-line-left {
+      right: -80px;
+    }
+
+    .merge-line-right {
+      left: -80px;
+    }
+
+    .final-line-left,
+    .final-line-right {
+      width: 100px;
+      height: 4px;
+      background-color: black;
     }
 
     .center {
@@ -84,17 +111,12 @@
       align-items: center;
       justify-content: center;
       gap: 40px;
+      position: relative;
     }
 
     .stanley-cup {
-      width: 180px;
+      width: 200px;
       height: auto;
-    }
-
-    .final-connector {
-      width: 60px;
-      height: 2px;
-      background-color: black;
     }
 
     .back-link {
@@ -118,8 +140,10 @@
       }
 
       .connector,
-      .connector-left,
-      .final-connector {
+      .merge-line-left,
+      .merge-line-right,
+      .final-line-left,
+      .final-line-right {
         display: none;
       }
 
@@ -136,33 +160,36 @@
     
     <!-- Left Side -->
     <div class="round">
-      <div class="matchup">
+      <div class="matchup" style="margin-bottom: 20px;">
         <div class="team-box">
-          <img src="elicopter.png" alt="Helicopter Logo">
+          <img src="helicopter.png" alt="Helicopter Logo">
           ELICOPTERS
         </div>
-        <div class="connector"></div>
+        <div class="connector connector-right"></div>
       </div>
 
-      <div class="matchup">
+      <div class="matchup" style="margin-top: 20px;">
         <div class="team-box">
           <img src="shtinkle.png" alt="Shtinkle Logo">
           SHTINKLEMACHERS
         </div>
-        <div class="connector"></div>
+        <div class="connector connector-right"></div>
       </div>
+
+      <!-- Vertical merge line -->
+      <div class="merge-line-left" style="top: 65px;"></div>
     </div>
 
-    <!-- Center: Final Round with Cup and Lines -->
+    <!-- Center Final Round -->
     <div class="center">
-      <div class="final-connector"></div>
+      <div class="final-line-left"></div>
       <img src="InShot_20250616_232552058.jpg" alt="Stanley Cup" class="stanley-cup">
-      <div class="final-connector"></div>
+      <div class="final-line-right"></div>
     </div>
 
     <!-- Right Side -->
     <div class="round">
-      <div class="matchup">
+      <div class="matchup" style="margin-bottom: 20px;">
         <div class="connector connector-left"></div>
         <div class="team-box">
           <img src="770.png" alt="770 Logo">
@@ -170,13 +197,16 @@
         </div>
       </div>
 
-      <div class="matchup">
+      <div class="matchup" style="margin-top: 20px;">
         <div class="connector connector-left"></div>
         <div class="team-box">
           <img src="smashers.png" alt="Smashers Logo">
           ISRAEL SMASHERS
         </div>
       </div>
+
+      <!-- Vertical merge line -->
+      <div class="merge-line-right" style="top: 65px;"></div>
     </div>
 
   </div>
