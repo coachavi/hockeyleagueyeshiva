@@ -170,22 +170,32 @@
     .award-box {
       background: linear-gradient(145deg, #FFD700, #FFEF8A);
       color: black;
-      padding: 16px 24px;
+      padding: 20px 24px;
       border-radius: 12px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       box-shadow: 0 0 12px #555;
       font-size: 20px;
       font-weight: bold;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-width: 140px;
     }
 
     .award-box img {
-      width: 40px;
-      height: 40px;
-      margin-left: 12px;
+      width: 80px;
+      height: 80px;
+      margin: 12px 0 8px 0;
       object-fit: contain;
-      filter: drop-shadow(0 0 3px #333);
+      filter: drop-shadow(0 0 4px #333);
+    }
+
+    .award-name {
+      font-weight: normal;
+      font-size: 16px;
+      margin-top: 0;
+      text-align: center;
+      color: black;
     }
 
     .back-link {
@@ -296,10 +306,12 @@
     <div class="award-box">
       MVP
       <img src="mvp.png" alt="MVP Award" />
+      <p class="award-name">S.AZOULAY</p>
     </div>
     <div class="award-box">
       BEST GOALIE
       <img src="goalie.png" alt="Best Goalie Award" />
+      <p class="award-name">L.PERLSTEIN</p>
     </div>
   </div>
 
