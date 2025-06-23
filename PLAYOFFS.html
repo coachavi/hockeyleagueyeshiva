@@ -46,7 +46,7 @@
       font-weight: bold;
       font-size: 20px;
       box-shadow: 0 0 10px #444;
-      min-width: 240px;
+      min-width: 260px;
       z-index: 2;
       color: white;
     }
@@ -57,6 +57,21 @@
       margin-right: 12px;
       object-fit: contain;
       filter: drop-shadow(0 0 2px black);
+    }
+
+    .score-boxes {
+      display: flex;
+      gap: 6px;
+      margin-right: 12px;
+    }
+
+    .score-box {
+      background-color: #444;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: normal;
+      box-shadow: 0 0 4px #222;
     }
 
     .connector {
@@ -165,16 +180,24 @@
     <div class="round">
       <div class="matchup">
         <div class="team-box">
-          <img src="elicopter.png" alt="Elicopter Logo" />
-          0 3 0 &nbsp; ELICOPTERS
+          <div class="score-boxes">
+            <span class="score-box">0</span>
+            <span class="score-box">3</span>
+            <span class="score-box">0</span>
+          </div>
+          ELICOPTERS
         </div>
         <div class="connector connector-right"></div>
       </div>
 
       <div class="matchup">
         <div class="team-box">
-          <img src="shtinkle.png" alt="Shtinkle Logo" />
-          4 2 1 &nbsp; SHTINKLEMACHERS
+          <div class="score-boxes">
+            <span class="score-box">4</span>
+            <span class="score-box">2</span>
+            <span class="score-box">1</span>
+          </div>
+          SHTINKLEMACHERS
         </div>
         <div class="connector connector-right"></div>
       </div>
@@ -185,19 +208,27 @@
     <!-- Center Stanley Cup Final Matchup -->
     <div class="center">
       <div class="team-box">
-        <img src="shtinkle.png" alt="Shtinkle Logo" />
-        2 5 1 &nbsp; SHTINKLEMACHERS
+        <div class="score-boxes">
+          <span class="score-box">2</span>
+          <span class="score-box">5</span>
+          <span class="score-box">1</span>
+        </div>
+        SHTINKLEMACHERS
       </div>
 
-      <!-- Stanley Cup + 770 Champion Logo -->
+      <!-- Stanley Cup + Champion Logo -->
       <div class="stanley-cup-wrapper">
         <img src="InShot_20250616_232552058.jpg" alt="Stanley Cup" class="stanley-cup" />
         <img src="770.png" alt="770 Logo" class="champion-logo" />
       </div>
 
       <div class="team-box">
-        <img src="770.png" alt="770 Logo" />
-        3 2 5 &nbsp; 770 TUNNEL DIGGERS
+        <div class="score-boxes">
+          <span class="score-box">3</span>
+          <span class="score-box">2</span>
+          <span class="score-box">5</span>
+        </div>
+        770 TUNNEL DIGGERS
       </div>
     </div>
 
@@ -206,16 +237,22 @@
       <div class="matchup">
         <div class="connector connector-left"></div>
         <div class="team-box">
-          <img src="770.png" alt="770 Logo" />
-          4 4 &nbsp; 770 TUNNEL DIGGERS
+          <div class="score-boxes">
+            <span class="score-box">4</span>
+            <span class="score-box">4</span>
+          </div>
+          770 TUNNEL DIGGERS
         </div>
       </div>
 
       <div class="matchup">
         <div class="connector connector-left"></div>
         <div class="team-box">
-          <img src="smashers.png" alt="Smashers Logo" />
-          1 1 &nbsp; ISRAEL SMASHERS
+          <div class="score-boxes">
+            <span class="score-box">1</span>
+            <span class="score-box">1</span>
+          </div>
+          ISRAEL SMASHERS
         </div>
       </div>
 
