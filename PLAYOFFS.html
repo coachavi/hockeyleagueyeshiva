@@ -158,6 +158,36 @@
       filter: drop-shadow(0 0 6px black);
     }
 
+    /* New Award Section Styles */
+    .awards-section {
+      display: flex;
+      gap: 40px;
+      margin-top: 60px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .award-box {
+      background: linear-gradient(145deg, #FFD700, #FFEF8A);
+      color: black;
+      padding: 16px 24px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 0 12px #555;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .award-box img {
+      width: 40px;
+      height: 40px;
+      margin-left: 12px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 3px #333);
+    }
+
     .back-link {
       display: block;
       text-align: center;
@@ -210,9 +240,9 @@
     <div class="center">
       <div class="team-box">
         <div class="score-boxes">
-          <span class="score-box">1</span>
-          <span class="score-box">5</span>
           <span class="score-box">2</span>
+          <span class="score-box">5</span>
+          <span class="score-box">1</span>
         </div>
         SHTINKLEMACHERS
       </div>
@@ -259,6 +289,18 @@
       <div class="merge-line merge-line-right"></div>
     </div>
 
+  </div>
+
+  <!-- Awards Section -->
+  <div class="awards-section">
+    <div class="award-box">
+      MVP
+      <img src="mvp.png" alt="MVP Award" />
+    </div>
+    <div class="award-box">
+      BEST GOALIE
+      <img src="goalie.png" alt="Best Goalie Award" />
+    </div>
   </div>
 
   <a class="back-link" href="home.html">← Back to Home</a>
