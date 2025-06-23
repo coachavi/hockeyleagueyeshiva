@@ -121,10 +121,25 @@
       margin-right: 100px;
     }
 
-    .stanley-cup {
+    .stanley-cup-wrapper {
+      position: relative;
       width: 200px;
       height: auto;
+    }
+
+    .stanley-cup {
+      width: 100%;
       filter: drop-shadow(0 0 6px white);
+    }
+
+    .champion-logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 70px;
+      height: 70px;
+      transform: translate(-50%, -50%);
+      filter: drop-shadow(0 0 4px black);
     }
 
     .back-link {
@@ -174,7 +189,11 @@
         2 5 1 &nbsp; SHTINKLEMACHERS
       </div>
 
-      <img src="InShot_20250616_232552058.jpg" alt="Stanley Cup" class="stanley-cup" />
+      <!-- Stanley Cup + 770 Logo -->
+      <div class="stanley-cup-wrapper">
+        <img src="InShot_20250616_232552058.jpg" alt="Stanley Cup" class="stanley-cup" />
+        <img src="770.png" alt="770 Logo" class="champion-logo" />
+      </div>
 
       <div class="team-box">
         <img src="770.png" alt="770 Logo" />
