@@ -180,6 +180,11 @@
       font-weight: bold;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       min-width: 140px;
+      cursor: pointer; /* show pointer on hover */
+      transition: transform 0.2s ease;
+    }
+    .award-box:hover {
+      transform: scale(1.05);
     }
 
     .award-box img {
@@ -210,6 +215,61 @@
 
     .back-link:hover {
       text-decoration: underline;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+      animation: zoomIn 0.3s ease forwards;
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #fff;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      color: white;
+      font-size: 32px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      text-shadow: 0 0 6px black;
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.7);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
   </style>
 </head>
@@ -303,12 +363,12 @@
 
   <!-- Awards Section -->
   <div class="awards-section">
-    <div class="award-box">
+    <div class="award-box" data-img="mvp.png" tabindex="0" role="button" aria-label="View MVP image">
       MVP
       <img src="mvp.png" alt="MVP Award" />
       <p class="award-name">S.AZOULAY</p>
     </div>
-    <div class="award-box">
+    <div class="award-box" data-img="goalie.png" tabindex="0" role="button" aria-label="View Best Goalie image">
       BEST GOALIE
       <img src="goalie.png" alt="Best Goalie Award" />
       <p class="award-name">L.PERLSTEIN</p>
@@ -316,6 +376,63 @@
   </div>
 
   <a class="back-link" href="home.html">← Back to Home</a>
+
+  <!-- Modal -->
+  <div id="imgModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <span class="close-btn" id="closeModal" aria-label="Close modal">&times;</span>
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="Large award image" />
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.getElementById('closeModal');
+
+    // Open modal on award-box click
+    document.querySelectorAll('.award-box').forEach(box => {
+      box.addEventListener('click', () => {
+        const imgSrc = box.getAttribute('data-img');
+        modalImg.src = imgSrc;
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+        // Focus close button for accessibility
+        closeBtn.focus();
+      });
+      // Also open on keyboard Enter or Space
+      box.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          box.click();
+        }
+      });
+    });
+
+    // Close modal function
+    function closeModalFunc() {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      modalImg.src = '';
+    }
+
+    // Close modal on close button click
+    closeBtn.addEventListener('click', closeModalFunc);
+
+    // Close modal if clicking outside the image
+    modal.addEventListener('click', (e) => {
+      if(e.target === modal) {
+        closeModalFunc();
+      }
+    });
+
+    // Close modal on ESC key
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape' && modal.style.display === 'flex') {
+        closeModalFunc();
+      }
+    });
+  </script>
 
 </body>
 </html>
