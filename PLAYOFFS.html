@@ -39,7 +39,7 @@
     .team-box {
       display: flex;
       align-items: center;
-      background-color: #222; /* dark but visible on black */
+      background-color: #222;
       border: 2px solid #888;
       border-radius: 10px;
       padding: 12px 20px;
@@ -99,25 +99,25 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0px;
+      gap: 40px;
       position: relative;
+      margin: 60px 0;
     }
 
-    .final-line-left {
-      width: 20px;
-      height: 4px;
-      background-color: white;
-      position: relative;
-      z-index: 10;
-      margin-left: 100px;
-    }
-
+    .final-line-left,
     .final-line-right {
       width: 20px;
       height: 4px;
       background-color: white;
       position: relative;
       z-index: 10;
+    }
+
+    .final-line-left {
+      margin-left: 100px;
+    }
+
+    .final-line-right {
       margin-right: 100px;
     }
 
@@ -167,11 +167,19 @@
       <div class="merge-line merge-line-left"></div>
     </div>
 
-    <!-- Center Stanley Cup -->
+    <!-- Center Stanley Cup Final Matchup -->
     <div class="center">
-      <div class="final-line-left"></div>
+      <div class="team-box">
+        <img src="shtinkle.png" alt="Shtinkle Logo" />
+        2 5 1 &nbsp; SHTINKLEMACHERS
+      </div>
+
       <img src="InShot_20250616_232552058.jpg" alt="Stanley Cup" class="stanley-cup" />
-      <div class="final-line-right"></div>
+
+      <div class="team-box">
+        <img src="770.png" alt="770 Logo" />
+        3 2 5 &nbsp; 770 TUNNEL DIGGERS
+      </div>
     </div>
 
     <!-- Right Side -->
